@@ -12,7 +12,8 @@
       "installTools": true,
       "toolsToInstall": "poetry",
       "version": "3.11"
-    }
+    },
+    "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
 
   "customizations": {

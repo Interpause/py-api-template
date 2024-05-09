@@ -8,5 +8,22 @@ Template for FastAPI-based API server. Features:
 - VSCode debugging tasks.
 - Other QoL packages.
 
-Before usage, remember to replace all instances of `py-api-template` & `py_api_template`
-with your project name. Tip: rename the `py_api_template` folder first for auto-refactor.
+Oh yeah, this template should work with the fancy "Dev Containers: Clone Repository
+in Container Volume..." feature.
+
+## Usage Instructions
+
+- Replace all instances of `py-api-template` & `py_api_template`.
+  - Tip: Rename the `py_api_template` folder first for auto-refactoring.
+- Find `3.11` using global search and replace with desired Python version.
+
+## Useful Commands
+
+```sh
+# The venv auto-activates, so these work.
+poe prod # Launch "production" server.
+poe dev # Launch debugging server, use VSCode's debug task instead by pressing F5.
+
+# Building docker image for deployment.
+docker build -f Dockerfile . -t example
+```
