@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "py-api-template"
+version = "0.1.0"
+description = "template for python api server"
+authors = ["Your Name <you@example.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.11.*"
+rich = "^13.7.1"
+fastapi = { extras = ["all"], version = "^0.111.0" }
+python-dotenv = "^1.0.1"
+gunicorn = "^22.0.0"
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.4.3"
+poethepoet = "^0.26.1"
+
+[tool.poe.tasks]
+dev = "python dev.py"
+prod = "gunicorn -k uvicorn.workers.UvicornWorker -b 0.0.0.0:3000 py_api_template:app"
+
+[tool.ruff.lint]
+select = ["D"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
