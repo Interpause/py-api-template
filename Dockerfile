@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
-# TODO: Test if pip-installed cuda wheels can work without using the bulky nvidia/cuda image.
 FROM python:3.11-slim-bookworm
+#FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
 COPY --link . /app
 WORKDIR /app
