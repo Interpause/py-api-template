@@ -15,7 +15,6 @@ in Container Volume..." feature.
 
 - Replace all instances of `py-api-template` & `py_api_template`.
   - Tip: Rename the `py_api_template` folder first for auto-refactoring.
-- Find `3.11` using global search and replace with desired Python version.
 
 ## Useful Commands
 
@@ -26,4 +25,7 @@ poe dev # Launch debugging server, use VSCode's debug task instead by pressing F
 
 # Building docker image for deployment.
 docker build -f Dockerfile . -t example
+
+# Running FastAPI app (with GPU),
+docker run --gpus all -p 3000:3000 example
 ```

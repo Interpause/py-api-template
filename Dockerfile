@@ -1,5 +1,7 @@
 # syntax=docker/dockerfile:1
+# NOTE: Docker's GPU support works for most images despite common misconceptions.
 FROM python:3.11-slim-bookworm
+# Example of prebuilt pytorch image to save download time.
 #FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
 COPY --link . /app
