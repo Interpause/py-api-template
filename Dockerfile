@@ -7,7 +7,16 @@ FROM python:3.11-slim-bookworm
 COPY --link . /app
 WORKDIR /app
 
-RUN pip3 install --no-cache-dir .
+# Cache packages to speed up builds, see: https://github.com/moby/buildkit/blob/master/frontend/dockerfile/docs/reference.md#run---mounttypecache
+# Example:
+# RUN rm -f /etc/apt/apt.conf.d/docker-clean; \
+#   echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
+# RUN --mount=type=cache,target=/var/cache/apt,sharing=locked \
+#   --mount=type=cache,target=/var/lib/apt,sharing=locked \
+#   apt-get update && apt-get install -y vim
+
+RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
+  pip install .
 
 EXPOSE 3000
 CMD [ \

@@ -27,5 +27,5 @@ poe dev # Launch debugging server, use VSCode's debug task instead by pressing F
 docker build -f Dockerfile . -t example
 
 # Running FastAPI app (with GPU),
-docker run --gpus all -p 3000:3000 example
+docker run --rm --gpus all -p 3000:3000 example
 ```
