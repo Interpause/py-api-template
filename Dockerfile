@@ -16,7 +16,7 @@ WORKDIR /app
 #   apt-get update && apt-get install -y vim
 
 RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
-  pip install .
+  pip install -e .
 
 EXPOSE 3000
 CMD [ \
