@@ -4,6 +4,10 @@ FROM python:3.11-slim-bookworm
 # Example of prebuilt pytorch image to save download time.
 #FROM pytorch/pytorch:2.3.0-cuda12.1-cudnn8-runtime
 
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
+ENV PIP_ROOT_USER_ACTION=ignore
+
 COPY --link . /app
 WORKDIR /app
 
@@ -16,7 +20,8 @@ WORKDIR /app
 #   apt-get update && apt-get install -y vim
 
 RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
-  pip install -e .
+  pip install -U pip \
+  && pip install -e .
 
 EXPOSE 3000
 CMD [ \
