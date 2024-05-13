@@ -3,9 +3,12 @@
 import asyncio
 import logging
 
+from dotenv import load_dotenv
 from fastapi import FastAPI
 
 __all__ = ["app"]
+
+load_dotenv()
 
 log = logging.getLogger(__name__)
 
