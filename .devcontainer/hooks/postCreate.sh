@@ -1,4 +1,7 @@
 #!/bin/sh
+rm -f /etc/apt/apt.conf.d/docker-clean; \
+  echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' > /etc/apt/apt.conf.d/keep-cache
+
 poetry config virtualenvs.in-project true
 poetry config virtualenvs.prompt venv
 poetry install
