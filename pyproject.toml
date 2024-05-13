@@ -10,7 +10,6 @@ python = "<3.13,>=3.8"
 rich = "^13.7.1"
 fastapi = { extras = ["all"], version = "^0.111.0" }
 python-dotenv = "^1.0.1"
-gunicorn = "^22.0.0"
 
 [tool.poetry.group.dev.dependencies]
 ruff = "*"
@@ -18,7 +17,7 @@ poethepoet = "*"
 
 [tool.poe.tasks]
 dev = "python dev.py"
-prod = "gunicorn -k uvicorn.workers.UvicornWorker -b 0.0.0.0:3000 py_api_template:app"
+prod = "fastapi run py_api_template --proxy-headers --port 3000"
 
 [tool.ruff.lint]
 select = ["D"]

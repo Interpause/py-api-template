@@ -24,9 +24,4 @@ RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
   && pip install -e .
 
 EXPOSE 3000
-CMD [ \
-  "gunicorn", \
-  "--worker-class=uvicorn.workers.UvicornWorker", \
-  "--bind=0.0.0.0:3000", \
-  "py_api_template:app" \
-  ]
+CMD ["fastapi", "run", "py_api_template", "--proxy-headers", "--port", "3000"]
