@@ -18,14 +18,13 @@ in Container Volume..." feature.
 
 ## Useful Commands
 
+The venv auto-activates, so these work.
+
 ```sh
-# The venv auto-activates, so these work.
-poe prod # Launch "production" server.
-poe dev # Launch debugging server, use VSCode's debug task instead by pressing F5.
-
+# Launch debugging server, use VSCode's debug task instead by pressing F5.
+poe dev
 # Building docker image for deployment.
-docker build -f Dockerfile . -t example
-
-# Running FastAPI app (with GPU),
-docker run --rm --gpus all -p 3000:3000 example
+poe build {insert_version_like_0.1.0}
+# Run the docker image locally.
+poe prod
 ```
