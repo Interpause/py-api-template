@@ -1,28 +1,35 @@
 """Main app."""
 
-import asyncio
-import logging
-
 from dotenv import load_dotenv
-from fastapi import FastAPI
-
-__all__ = ["app"]
 
 load_dotenv()
 
+import asyncio
+import logging
+
+from fastapi import FastAPI
+
+__all__ = ["create_app"]
 log = logging.getLogger(__name__)
 
-app = FastAPI()
 
+def create_app():
+    """App factory.
 
-@app.get("/hello")
-async def hello():
-    """Returns a greeting.
-
-    Returns:
-        dict: A greeting message.
+    Creating the app within a function prevents mishaps if using multiprocessing.
     """
-    log.warn("zzz... 1 more second...")
-    await asyncio.sleep(1)
-    log.info("...zzz... oh wha...?!")
-    return {"message": "Hello, World!"}
+    app = FastAPI()
+
+    @app.get("/hello")
+    async def hello():
+        """Returns a greeting.
+
+        Returns:
+            dict: A greeting message.
+        """
+        log.warn("zzz... 1 more second...")
+        await asyncio.sleep(1)
+        log.info("...zzz... oh wha...?!")
+        return {"message": "Hello, World!"}
+
+    return app

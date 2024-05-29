@@ -21,9 +21,9 @@ def create_debug_app():
     )
     logging.getLogger("src").setLevel(logging.DEBUG)
 
-    from src import app
+    from src import create_app
 
-    return app
+    return create_app()
 
 
 if __name__ == "__main__":
@@ -34,7 +34,7 @@ if __name__ == "__main__":
     uvicorn.run(
         "dev:create_debug_app",
         host="localhost",
-        port=8000,
+        port=3000,
         log_level=logging.INFO,
         reload=True,
         factory=True,
