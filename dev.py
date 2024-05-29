@@ -19,9 +19,9 @@ def create_debug_app():
             )
         ],
     )
-    logging.getLogger("py_api_template").setLevel(logging.DEBUG)
+    logging.getLogger("src").setLevel(logging.DEBUG)
 
-    from py_api_template import app
+    from src import app
 
     return app
 

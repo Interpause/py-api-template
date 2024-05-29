@@ -13,8 +13,8 @@ in Container Volume..." feature.
 
 ## Usage Instructions
 
-- Replace all instances of `py-api-template` & `py_api_template`.
-  - Tip: Rename the `py_api_template` folder first for auto-refactoring.
+- Replace all instances of `py-api-template`. Optionally, rename `src` to a nicer name.
+  - Tip: Rename the `src` folder first for auto-refactoring.
 
 ## Useful Commands
 
