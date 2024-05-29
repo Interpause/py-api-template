@@ -18,13 +18,17 @@ in Container Volume..." feature.
 
 ## Useful Commands
 
-The venv auto-activates, so these work.
+Ensure the virtual environment is active and `poetry install` has been run before using the below:
 
 ```sh
 # Launch debugging server, use VSCode's debug task instead by pressing F5.
 poe dev
-# Building docker image for deployment.
+# Run any tests.
+poe test
+# Build docker image for deployment; will also be tagged as latest.
 poe build {insert_version_like_0.1.0}
-# Run the docker image locally.
+# Run the latest image locally.
 poe prod
+# Publish the latest image.
+poe publish
 ```
