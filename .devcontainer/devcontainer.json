@@ -40,6 +40,11 @@
       "type": "volume",
       "source": "apt-cache",
       "target": "/var/cache/apt"
+    },
+    {
+      "type": "volume",
+      "source": "apt-list-cache",
+      "target": "/var/lib/apt"
     }
   ],
 
