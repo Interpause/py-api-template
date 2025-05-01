@@ -11,7 +11,7 @@
     "ghcr.io/devcontainers/features/python:1": {
       "installTools": true,
       "toolsToInstall": "poetry",
-      "version": "3.11"
+      "version": "3.12"
     },
     "ghcr.io/devcontainers/features/docker-outside-of-docker:1": {}
   },
