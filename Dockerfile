@@ -1,7 +1,7 @@
 # syntax=docker/dockerfile:1
 
 # NOTE: Docker's GPU support works for most images despite common misconceptions.
-FROM python:3.12-slim-bookworm as deploy
+FROM python:3.12-slim-bookworm AS deploy
 
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
