@@ -12,7 +12,7 @@ def create_debug_app():
     import uvicorn
 
     logging.basicConfig(
-        format=None,
+        format="",
         handlers=[
             RichHandler(
                 rich_tracebacks=True, tracebacks_suppress=[fastapi, starlette, uvicorn]
@@ -29,7 +29,7 @@ def create_debug_app():
 if __name__ == "__main__":
     import uvicorn
 
-    logging.basicConfig(format=None, handlers=[RichHandler(rich_tracebacks=True)])
+    logging.basicConfig(format="", handlers=[RichHandler(rich_tracebacks=True)])
 
     uvicorn.run(
         "dev:create_debug_app",

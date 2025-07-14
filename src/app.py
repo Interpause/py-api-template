@@ -27,7 +27,7 @@ def create_app():
         Returns:
             dict: A greeting message.
         """
-        log.warn("zzz... 1 more second...")
+        log.warning("zzz... 1 more second...")
         await asyncio.sleep(1)
         log.info("...zzz... oh wha...?!")
         return {"message": "Hello, World!"}
