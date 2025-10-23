@@ -9,15 +9,15 @@ packages = [{ include = "src" }]
 [tool.poetry.dependencies]
 python = "3.12.*"
 python-dotenv = "^1.1.1"
-fastapi-slim = "^0.116.1"
-uvicorn = "^0.35.0"
-uvloop = "^0.21.0"
-httptools = "^0.6.4"
+fastapi-slim = "^0.119.1"
+uvicorn = "^0.38.0"
+uvloop = "^0.22.1"
+httptools = "^0.7.1"
 
 [tool.poetry.group.dev.dependencies]
-ruff = "^0.12.3"
-poethepoet = "^0.36.0"
-rich = "^14.0.0"
+ruff = "^0.14.1"
+poethepoet = "^0.37.0"
+rich = "^14.2.0"
 
 [tool.poetry.requires-plugins]
 poetry-plugin-export = ">=1.8"
