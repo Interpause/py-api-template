@@ -42,7 +42,6 @@ cmd = """docker build -f Dockerfile . \
   -t py-api-template:latest \
   -t py-api-template:${tag} \
 """
-deps = ["requirements"]
 args = [{ name = "tag", positional = true, required = true }]
 
 [tool.ruff.lint]

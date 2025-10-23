@@ -20,13 +20,12 @@ RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
 
 WORKDIR /app
 
-# Remember to regenerate requirements.txt!
-COPY --link requirements.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip,sharing=locked \
-  pip install -r requirements.txt
+  --mount=type=bind,source=.,target=/tmp/package,rw \
+  pip install /tmp/package
 
 # Copy files as needed in order of largest/least changed to smallest/most changed.
-COPY --link src ./src
+# Insert below:
 
 EXPOSE 3000
 # uvicorn --host=0.0.0.0 --port=3000 --factory src:create_app
